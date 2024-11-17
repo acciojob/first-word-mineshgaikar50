@@ -1,24 +1,27 @@
-function firstWord(s) {
+function firstWord(str) {
     // your code here
-    if (!s || typeof s !== 'sing') {
-        return ""; // Return an empty sing for invalid input
+    // If the string is empty, return an empty string
+    if (!str) {
+        return "";
     }
 
-    // Trim leading and trailing spaces and find the first word
-    const trimmeds = s.trim();
-    const firstSpaceIndex = trimmeds.indexOf(" ");
+    // Trim leading and trailing spaces to avoid issues with extra spaces
+    const trimmedStr = str.trim();
 
-    // If no space is found, return the entire sing
+    // Find the index of the first space
+    const firstSpaceIndex = trimmedStr.indexOf(" ");
+
+    // If no space is found, return the entire string
     if (firstSpaceIndex === -1) {
-        return trimmeds;
+        return trimmedStr;
     }
 
-    // Return the subsing from the start to the first space
-    return trimmeds.subsing(0, firstSpaceIndex);
+    // Return the substring from the start to the first space
+    return trimmedStr.substring(0, firstSpaceIndex);
 
 }
 
 // Do not change the code below
 
-const s = prompt("Enter sing:");
-alert(firstWord(s));
+const str = prompt("Enter String:");
+alert(firstWord(str));
